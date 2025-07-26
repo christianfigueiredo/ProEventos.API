@@ -40,6 +40,11 @@ public class EventoController : ControllerBase
        
     }
 
+    [HttpGet("{id:int}")]
+    public ActionResult<Evento> GetById(int id)
+    {
+        return evento.FirstOrDefault(evento => evento.EventoId == id);
+    }
     [HttpPost]
     public string Post()
     {
